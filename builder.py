@@ -15,7 +15,7 @@ src_dir = 'src'
 
 #Compiler options
 compiler = 'clang++'
-libs = ' -lm -lglfw -lvulkan -ldl -lpthread -lX11 -lXxf86vm -lXrandr -lXi '
+libs = ' -lm -lGLX_nvidia -lglfw -lvulkan -ldl -lpthread -lX11 -lXxf86vm -lXrandr -lXi '
 cflags = ' -g -Wall -std=c++17 -O2 '
 
 ##########################################
