@@ -12,13 +12,15 @@ const std::vector<const char*> validationLayers = {
     "VK_LAYER_KHRONOS_validation"
 };
 
+#define K_DEBUG
+
 #ifdef K_DEBUG
-const bool enableValidationLayers = false;
-#else
 const bool enableValidationLayers = true;
+#else
+const bool enableValidationLayers = false;
 #endif
 
-#define K_DEBUG
+
 
 VkResult CreateDebugUtilsMessengerEXT(
  VkInstance instance,
