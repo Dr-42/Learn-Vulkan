@@ -41,6 +41,7 @@ private:
     void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
     void setupDebugMessenger();
     void pickPhysicalDevice();
+    void createLogicalDevice();
     void initVulkan();
     void mainLoop();
     void cleanup();
@@ -59,5 +60,7 @@ private:
     VkInstance instance;
     VkDebugUtilsMessengerEXT debugMessenger;
     VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
+    VkDevice device;
+    VkQueue graphicsQueue;
 };
 
