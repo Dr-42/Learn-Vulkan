@@ -9,7 +9,7 @@ from termcolor import colored
 out_file = 'test'
 out_type = 'exe'
 # Directories
-out_dir = '../bin'
+out_dir = 'bin'
 obj_dir = 'obj'
 src_dir = 'src'
 
