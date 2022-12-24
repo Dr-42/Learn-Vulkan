@@ -9,6 +9,7 @@
 #include <cstdlib>
 #include <cstring>
 #include <vector>
+#include <optional>
 
 VkResult CreateDebugUtilsMessengerEXT
     (VkInstance instance,
@@ -16,6 +17,14 @@ VkResult CreateDebugUtilsMessengerEXT
     const VkAllocationCallbacks* pAllocator,
     VkDebugUtilsMessengerEXT* pDebugMessenger);
 
+struct QueueFamilyIndices{
+    std::optional<uint32_t> graphicsFamily;
+    bool isComplete(){
+        return graphicsFamily.has_value();
+    }
+};
+
+QueueFamilyIndices findQueueFamilies(VkPhysicalDevice device);
 
 class App {
 public:
@@ -31,6 +40,7 @@ private:
     void createInstance();
     void populateDebugMessengerCreateInfo(VkDebugUtilsMessengerCreateInfoEXT& createInfo);
     void setupDebugMessenger();
+    void pickPhysicalDevice();
     void initVulkan();
     void mainLoop();
     void cleanup();
@@ -48,5 +58,6 @@ private:
     GLFWwindow* window;
     VkInstance instance;
     VkDebugUtilsMessengerEXT debugMessenger;
+    VkPhysicalDevice physicalDevice = VK_NULL_HANDLE;
 };
 
